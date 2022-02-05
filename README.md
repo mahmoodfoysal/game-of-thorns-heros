@@ -4,5 +4,5 @@
 
 * This website create by react app
 * Game of thorns actors salary calculate
-* This is web page isn't responsive for mobile or lower device.
+* This is web page is responsive for lower device.
 * I will update in future this website.

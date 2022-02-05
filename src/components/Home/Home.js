@@ -11,8 +11,8 @@ const Home = () => {
     //load data from json
     useEffect(() => {
         fetch('actors.JSON')
-        .then(res => res.json())
-        .then(data => setActors(data))
+            .then(res => res.json())
+            .then(data => setActors(data))
     }, []);
 
     // cart button 
@@ -23,24 +23,25 @@ const Home = () => {
 
     return (
 
-            <div className='container'>
+        <div className='container'>
             <div className="row">
-                <div className="col-md-9">
+                <div className="col-md-3 order-md-2">
+                    <Cart
+                        cart={cart}
+                    ></Cart>
+                </div>
+                <div className="col-md-9 order-md-1">
                     <div className="row">
-                        {                    
+                        {
                             actors.map(actor => <Actors
-                            key = {actor.key}    
-                            actor={actor}
-                            handleActorsButton = {handleActorsButton}
+                                key={actor.key}
+                                actor={actor}
+                                handleActorsButton={handleActorsButton}
                             ></Actors>)
                         }
                     </div>
                 </div>
-                <div className="col-md-3">
-                        <Cart
-                        cart = {cart}
-                        ></Cart>
-                </div>
+
             </div>
         </div>
     );
